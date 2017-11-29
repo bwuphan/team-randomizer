@@ -1,4 +1,13 @@
+body, html {
+  height: 100%;
+}
+
 .App {
+  text-align: center;
+}
+
+.app-body {
+  padding-top: 10%;
   text-align: center;
 }
 
@@ -9,8 +18,8 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  height: 10%;
+  padding: 5%;
   color: white;
 }
 
