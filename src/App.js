@@ -13,6 +13,10 @@ class App extends Component {
     }
   }
 
+  changeDisplay = (display, num) => {
+    this.setState({display: num})
+  }
+
   render() {
     return (
       <div className="App">
@@ -20,7 +24,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Team Randomizer</h1>
         </header>
-        <Start show={this.state.display === 1} />
+        <Start display={this.state.display} changeDisplay={this.changeDisplay}/>
       </div>
     );
   }

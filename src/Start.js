@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const Start = ({ show }) => {
-  if (show === false) {
+const Start = ({ display, changeDisplay }) => {
+  if (display !== 1) {
     return null;
   } else {
     return (
@@ -10,7 +10,7 @@ const Start = ({ show }) => {
         <p className="App-intro">
           Click here to get started
         </p>
-        <Button bsStyle="success" bsSize="large">Large button</Button>
+        <Button onClick={() => changeDisplay(display, 2)} bsStyle="success" bsSize="large">Start</Button>
       </div>
     );
 
