@@ -6,8 +6,8 @@ const Start = ({ display, changeDisplay }) => {
     return null;
   } else {
     return (
-      <div className="app-body">
-        <p className="App-intro">
+      <div className="homepage__body">
+        <p className="font-large">
           Click here to get started
         </p>
         <Button onClick={() => changeDisplay(display, 2)} bsStyle="success" bsSize="large">Start</Button>
