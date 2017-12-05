@@ -3,8 +3,10 @@ import logo from './logo.svg';
 import { ButtonToolbar, Button } from 'react-bootstrap'
 import './App.css';
 
+import Header from './Header';
 import Start from './Start';
 import SelectNum from './SelectNum';
+
 
 class App extends Component {
   constructor(props) {
@@ -21,10 +23,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Team Randomizer</h1>
-        </header>
+        <Header display={this.state.display} />
         <Start display={this.state.display} changeDisplay={this.changeDisplay}/>
         <SelectNum display={this.state.display} changeDisplay={this.changeDisplay}/>
       </div>
