@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const SelectNum = ({ display, changeDisplay }) => {
-  const numPlayers = [...new Array(10).keys()].map(i => (i + 1));
-  const numTeams = [...new Array(50).keys()].map(i => (i + 1));
+const SelectNum = ({ display, initPlayers, changeNumTeams, changeNumTeammates, numTeammates, numTeams }) => {
+  const numTeammatesArr = [...new Array(10).keys()].map(i => (i + 1));
+  const numTeamsArr = [...new Array(50).keys()].map(i => (i + 1));
   if (display !== 2) {
     return null;
   } else {
@@ -11,11 +11,22 @@ const SelectNum = ({ display, changeDisplay }) => {
       <div className="select-size__body">
         <p className="font-large">How many players per team?</p>
         <p>
-          <select>{numPlayers.map((i) => <option>{i}</option>)}</select>
+          <select
+            value={numTeammates}
+            onChange={changeNumTeammates}
+          >
+          {numTeammatesArr.map((i) => <option key={i}>{i}</option>)}
+          </select>
         </p>
         <p className="font-large">How many teams?</p>
-        <p><select>{numTeams.map((i) => <option>{i}</option>)}</select></p>
-        <Button onClick={() => changeDisplay(display, 2)} bsStyle="info" bsSize="large">Continue</Button>
+        <p>
+          <select
+            value={numTeams}
+            onChange={changeNumTeams}>
+            {numTeamsArr.map((i) => <option key={i}>{i}</option>)}
+          </select>
+        </p>
+        <Button onClick={() => initPlayers(numTeammates)} bsStyle="info" bsSize="large">Continue</Button>
       </div>
     )
   }

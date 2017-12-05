@@ -10,7 +10,7 @@ const Start = ({ display, changeDisplay }) => {
         <p className="font-large">
           Click here to get started
         </p>
-        <Button onClick={() => changeDisplay(display, 2)} bsStyle="success" bsSize="large">Start</Button>
+        <Button onClick={() => changeDisplay(2)} bsStyle="success" bsSize="large">Start</Button>
       </div>
     );
 
