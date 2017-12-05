@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const SelectNumTeammates = ({ display, changeDisplay }) => {
+const SelectNum = ({ display, changeDisplay }) => {
   const numPlayers = [...new Array(10).keys()].map(i => (i + 1));
   const numTeams = [...new Array(50).keys()].map(i => (i + 1));
   if (display !== 2) {
@@ -21,4 +21,4 @@ const SelectNumTeammates = ({ display, changeDisplay }) => {
   }
 }
 
-export default SelectNumTeammates;
+export default SelectNum;

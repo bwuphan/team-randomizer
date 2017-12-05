@@ -4,7 +4,7 @@ import { ButtonToolbar, Button } from 'react-bootstrap'
 import './App.css';
 
 import Start from './Start';
-import SelectNumTeammates from './SelectNumTeammates';
+import SelectNum from './SelectNum';
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to Team Randomizer</h1>
         </header>
         <Start display={this.state.display} changeDisplay={this.changeDisplay}/>
-        <SelectNumTeammates display={this.state.display} changeDisplay={this.changeDisplay}/>
+        <SelectNum display={this.state.display} changeDisplay={this.changeDisplay}/>
       </div>
     );
   }
