@@ -4,6 +4,7 @@ import './App.css';
 import Header from './Header';
 import Start from './Start';
 import SelectNum from './SelectNum';
+import PlayerNames from './PlayerNames';
 
 
 class App extends Component {
@@ -46,6 +47,9 @@ class App extends Component {
           changeNumTeammates={this.changeNumTeammates}
           changeNumTeams={this.changeNumTeams}
           numTeammates={this.state.numTeammates}/>
+        <PlayerNames
+          display={this.state.display}
+          players={this.state.players} />
       </div>
     );
   }
