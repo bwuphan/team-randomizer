@@ -3,11 +3,12 @@ import React from 'react';
 const PlayerNames = ({ display, players }) => {
   if (display !== 3) return null;
   else return (
-    <div className="select-size__body">
-      {players.map(i =>
+    <div>
+      {players.map((player, i) =>
         <div key={i}>
-          <h2>{i}</h2>
-          <input />
+          <p>
+            {i + 1}: <input />
+          </p>
         </div>
       )}
     </div>
