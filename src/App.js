@@ -42,6 +42,10 @@ class App extends Component {
     this.setState({ players });
   }
 
+  randomizeTeams = () => {
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -56,7 +60,8 @@ class App extends Component {
         <PlayerNames
           display={this.state.display}
           players={this.state.players}
-          updatePlayers={this.updatePlayers} />
+          updatePlayers={this.updatePlayers}
+          randomizeTeams={this.randomizeTeams} />
       </div>
     );
   }
