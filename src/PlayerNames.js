@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 const PlayerNames = ({ display, players, updatePlayers }) => {
   console.log(updatePlayers)
@@ -12,6 +13,7 @@ const PlayerNames = ({ display, players, updatePlayers }) => {
           </p>
         </div>
       )}
+      <Button bsStyle="info" bsSize="large">Get teams!</Button>
     </div>
   );
 }
