@@ -36,6 +36,12 @@ class App extends Component {
     this.setState({numTeams: e.target.value});
   }
 
+  updatePlayers = (e, i) => {
+    let players = [...this.state.players];
+    players[i] = e.target.value;
+    this.setState({ players });
+  }
+
   render() {
     return (
       <div className="App">
@@ -49,7 +55,8 @@ class App extends Component {
           numTeammates={this.state.numTeammates}/>
         <PlayerNames
           display={this.state.display}
-          players={this.state.players} />
+          players={this.state.players}
+          updatePlayers={this.updatePlayers} />
       </div>
     );
   }
