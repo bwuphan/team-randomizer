@@ -26,7 +26,11 @@ const SelectNum = ({ display, initPlayers, changeNumTeams, changeNumTeammates, n
             {numTeamsArr.map((i) => <option key={i}>{i}</option>)}
           </select>
         </p>
-        <Button onClick={() => initPlayers(numTeammates)} bsStyle="info" bsSize="large">Continue</Button>
+        <Button
+          onClick={() => initPlayers(numTeammates)}
+          bsStyle="info"
+          bsSize="large">
+        Continue</Button>
       </div>
     )
   }
