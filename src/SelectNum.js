@@ -13,8 +13,7 @@ const SelectNum = ({ display, initPlayers, changeNumTeams, changeNumTeammates, n
         <p>
           <select
             value={numTeammates}
-            onChange={changeNumTeammates}
-          >
+            onChange={changeNumTeammates}>
           {numTeammatesArr.map((i) => <option key={i}>{i}</option>)}
           </select>
         </p>
