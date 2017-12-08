@@ -1,8 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const PlayerNames = ({ display, players, updatePlayers }) => {
-  console.log(updatePlayers)
+const PlayerNames = ({ display, players, updatePlayers, randomizeTeams }) => {
   if (display !== 3) return null;
   else return (
     <div>
@@ -13,7 +12,11 @@ const PlayerNames = ({ display, players, updatePlayers }) => {
           </p>
         </div>
       )}
-      <Button bsStyle="info" bsSize="large">Get teams!</Button>
+      <Button
+        bsStyle="info"
+        bsSize="large"
+        onClick={() => randomizeTeams()}>
+      Get teams!</Button>
     </div>
   );
 }

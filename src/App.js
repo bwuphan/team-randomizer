@@ -43,7 +43,10 @@ class App extends Component {
   }
 
   randomizeTeams = () => {
-
+    let teamsObj = {};
+    for (let i = 0; i < this.state.numTeams; i++) {
+      teamsObj[i] = [];
+    }
   }
 
   render() {
