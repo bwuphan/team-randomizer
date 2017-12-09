@@ -58,18 +58,26 @@ class App extends Component {
       let teamsMap = {};
       let teamsLeft = numTeams;
       const teamSize = players.length / numTeams;
+      let lastTeam = numTeams - 1;
       let assignedTeams = {};
       for (let i = 0; i < numTeams; i++) {
         teamsMap[i] = i;
         assignedTeams[i] = [];
       }
       for (let i = 0; i < players.length; i++) {
-        const team = Math.floor(Math.random() * teamsLeft);
+        const team = teamsMap[Math.floor(Math.random() * teamsLeft)];
+        console.log(players[i], team, assignedTeams)
         assignedTeams[team].push(players[i]);
         if (assignedTeams[team].length >= teamSize) {
-          teamsMap[team] = Object.keys()
+          teamsMap[team] = teamsMap[lastTeam];
+          delete teamsMap[lastTeam];
+          lastTeam--;
+          teamsLeft--;
+          console.log(lastTeam, teamsMap);
         }
       }
+      return assignedTeams;
+    }
 
 }
 
