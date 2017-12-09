@@ -43,10 +43,37 @@ class App extends Component {
   }
 
   randomizeTeams = () => {
-    let teamsObj = {};
-    for (let i = 0; i < this.state.numTeams; i++) {
-      teamsObj[i] = [];
+    var players = ['bobby', 'shirley', 'david', 'linda', 'lychee', 'doby'];
+
+    const findKeyForValue = (obj, value) => {
+      for (let key in obj) {
+        if (obj[key] === value) {
+          return key;
+        }
+      }
+      return null;
     }
+
+    const randomizeTeams = (players, numTeams) => {
+      let teamsMap = {};
+      let teamsLeft = numTeams;
+      const teamSize = players.length / numTeams;
+      let assignedTeams = {};
+      for (let i = 0; i < numTeams; i++) {
+        teamsMap[i] = i;
+        assignedTeams[i] = [];
+      }
+      for (let i = 0; i < players.length; i++) {
+        const team = Math.floor(Math.random() * teamsLeft);
+        assignedTeams[team].push(players[i]);
+        if (assignedTeams[team].length >= teamSize) {
+          teamsMap[team] = Object.keys()
+        }
+      }
+
+}
+
+console.log(randomizeTeams(players, 3));
   }
 
   render() {
