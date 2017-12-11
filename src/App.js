@@ -15,6 +15,7 @@ class App extends Component {
       numTeammates: 1,
       numTeams: 2,
       players: [],
+      assignedTeams: {}
     }
   }
 
@@ -43,32 +44,28 @@ class App extends Component {
   }
 
   randomizeTeams = () => {
-    const randomizeTeams = (players, numTeams) => {
-      let teamsMap = {};
-      let teamsLeft = numTeams;
-      const teamSize = players.length / numTeams;
-      let lastTeamKey = numTeams - 1;
-      let assignedTeams = {};
-      for (let i = 0; i < numTeams; i++) {
-        teamsMap[i] = i;
-        assignedTeams[i] = [];
-      }
-      for (let i = 0; i < players.length; i++) {
-        const randNum = Math.floor(Math.random() * teamsLeft);
-        const team = teamsMap[randNum];
-        assignedTeams[team].push(players[i]);
-        if (assignedTeams[team].length >= teamSize) {
-          teamsMap[randNum] = teamsMap[lastTeamKey];
-          delete teamsMap[lastTeamKey];
-          lastTeamKey--;
-          teamsLeft--;
-        }
-      }
-      return assignedTeams;
+    let teamsMap = {};
+    let teamsLeft = this.state.numTeams;
+    const teamSize = this.state.players.length / this.state.numTeams;
+    let lastTeamKey = this.state.numTeams - 1;
+    let assignedTeams = {};
+    for (let i = 0; i < this.state.numTeams; i++) {
+      teamsMap[i] = i;
+      assignedTeams[i] = [];
     }
-}
-
-console.log(randomizeTeams(players, 3));
+    for (let i = 0; i < this.state.players.length; i++) {
+      const randNum = Math.floor(Math.random() * teamsLeft);
+      const team = teamsMap[randNum];
+      assignedTeams[team].push(this.state.players[i]);
+      if (assignedTeams[team].length >= teamSize) {
+        teamsMap[randNum] = teamsMap[lastTeamKey];
+        delete teamsMap[lastTeamKey];
+        lastTeamKey--;
+        teamsLeft--;
+      }
+    }
+    this.setState({ assignedTeams });
+    console.log(assignedTeams);
   }
 
   render() {
