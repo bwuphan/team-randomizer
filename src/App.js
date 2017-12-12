@@ -5,6 +5,7 @@ import Header from './Header';
 import Start from './Start';
 import SelectNum from './SelectNum';
 import PlayerNames from './PlayerNames';
+import TeamsView from './TeamsView';
 
 
 class App extends Component {
@@ -65,7 +66,7 @@ class App extends Component {
       }
     }
     this.setState({ assignedTeams });
-    console.log(assignedTeams);
+    this.changeDisplay(4);
   }
 
   render() {
@@ -84,6 +85,9 @@ class App extends Component {
           players={this.state.players}
           updatePlayers={this.updatePlayers}
           randomizeTeams={this.randomizeTeams} />
+        <TeamsView
+          display={this.state.diplay}
+          assignedTeams={this.state.assignedTeams} />
       </div>
     );
   }
