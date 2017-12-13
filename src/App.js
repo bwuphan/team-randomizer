@@ -69,6 +69,16 @@ class App extends Component {
     this.changeDisplay(4)
   }
 
+  reset = () => {
+    this.setState({
+      display: 1,
+      numTeammates: 1,
+      numTeams: 2,
+      players: [],
+      assignedTeams: {}
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -91,7 +101,8 @@ class App extends Component {
         <TeamsView
           changeDisplay={this.changeDisplay}
           display={this.state.display}
-          assignedTeams={this.state.assignedTeams} />
+          assignedTeams={this.state.assignedTeams}
+          reset={this.reset}/>
       </div>
     );
   }
