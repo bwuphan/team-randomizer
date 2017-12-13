@@ -1,27 +1,29 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 
-const TeamsView = ({ changeDisplay, display, assignedTeams }) => {
+const TeamsView = ({ changeDisplay, display, assignedTeams, reset }) => {
   if (display !== 4) return null;
   else {
     return (
       <div>
         <a className="go-back" onClick={() => changeDisplay(display - 1)}>Go back</a>
+        <a className="reset" onClick={reset}>Reset</a>
         <h2>Teams</h2>
         {Object.keys(assignedTeams).map((team, i) => {
           return (
-            <Table striped bordered condensed hover>
-              <thead>
-                <tr>
-                  <b>{i + 1}</b>
-                </tr>
-              </thead>
-              <tbody>
-              {assignedTeams[team].map((player, i) =>
-                <tr key={i}>{player}</tr>
-              )}
-              </tbody>
-            </Table>
+            <div>
+              <h3>{i + 1}</h3>
+              <Table className="table" striped bordered hover>
+                <tbody>
+                {assignedTeams[team].map((player, j) =>
+                  <tr key={j}>
+                    <td className="table-left-column">{j + 1}: </td>
+                    <td className="table-right-column">{player}</td>
+                  </tr>
+                )}
+                </tbody>
+              </Table>
+            </div>
           );
         })}
       </div>

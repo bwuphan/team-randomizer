@@ -71,7 +71,7 @@ class App extends Component {
 
   reset = () => {
     this.setState({
-      display: 1,
+      display: 2,
       numTeammates: 1,
       numTeams: 2,
       players: [],

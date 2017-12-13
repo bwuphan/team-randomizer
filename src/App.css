@@ -10,6 +10,14 @@ body, html {
   top: 0;
 }
 
+.reset {
+  cursor: pointer;
+  position: absolute;
+  padding: 1%;
+  right: 0;
+  top: 0;
+}
+
 .table-left-column {
   width: 2em;
 }
