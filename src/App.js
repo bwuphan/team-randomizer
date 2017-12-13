@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   changeDisplay = (num) => {
-    this.setState({display: num})
+    this.setState({display: num});
   }
 
   initPlayers = () => {
@@ -66,7 +66,7 @@ class App extends Component {
       }
     }
     this.setState({ assignedTeams });
-    this.changeDisplay(4);
+    this.changeDisplay(4)
   }
 
   render() {
@@ -86,7 +86,7 @@ class App extends Component {
           updatePlayers={this.updatePlayers}
           randomizeTeams={this.randomizeTeams} />
         <TeamsView
-          display={this.state.diplay}
+          display={this.state.display}
           assignedTeams={this.state.assignedTeams} />
       </div>
     );
