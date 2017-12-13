@@ -1,14 +1,15 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const PlayerNames = ({ display, players, updatePlayers, randomizeTeams }) => {
+const PlayerNames = ({ changeDisplay, display, players, updatePlayers, randomizeTeams }) => {
   if (display !== 3) return null;
   else return (
     <div>
+      <a className="go-back" onClick={() => changeDisplay(display - 1)}>Go back</a>
       {players.map((player, i) =>
         <div key={i}>
           <p>
-            {i + 1}: <input onChange={event => updatePlayers(event, i)}/>
+            {i + 1}: <input value={players[i]} onChange={event => updatePlayers(event, i)}/>
           </p>
         </div>
       )}

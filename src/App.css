@@ -2,6 +2,18 @@ body, html {
   height: 100%;
 }
 
+.go-back {
+  cursor: pointer;
+  position: absolute;
+  padding: 1%;
+  left: 0;
+  top: 0;
+}
+
+.table-left-column {
+  width: 2em;
+}
+
 .App {
   text-align: center;
 }

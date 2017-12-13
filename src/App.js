@@ -77,15 +77,19 @@ class App extends Component {
         <SelectNum
           display={this.state.display}
           initPlayers={this.initPlayers}
+          changeDisplay={this.changeDisplay}
           changeNumTeammates={this.changeNumTeammates}
           changeNumTeams={this.changeNumTeams}
-          numTeammates={this.state.numTeammates}/>
+          numTeammates={this.state.numTeammates}
+          numTeams={this.state.numTeams} />
         <PlayerNames
+          changeDisplay={this.changeDisplay}
           display={this.state.display}
           players={this.state.players}
           updatePlayers={this.updatePlayers}
           randomizeTeams={this.randomizeTeams} />
         <TeamsView
+          changeDisplay={this.changeDisplay}
           display={this.state.display}
           assignedTeams={this.state.assignedTeams} />
       </div>
