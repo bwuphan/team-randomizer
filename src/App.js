@@ -39,6 +39,9 @@ class App extends Component {
     this.setState({numTeams: e.target.value});
   }
 
+  onBlurName = () => {
+    console.log('blur');
+  }
   updatePlayers = (e, i) => {
     let players = [...this.state.players];
     players[i] = e.target.value;
@@ -96,6 +99,7 @@ class App extends Component {
         <PlayerNames
           changeDisplay={this.changeDisplay}
           display={this.state.display}
+          onBlurName={this.onBlurName}
           players={this.state.players}
           updatePlayers={this.updatePlayers}
           randomizeTeams={this.randomizeTeams} />
