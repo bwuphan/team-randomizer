@@ -6,13 +6,15 @@ const PlayerNames = ({ changeDisplay, display, players, updatePlayers, randomize
   else return (
     <div>
       <a className="go-back" onClick={() => changeDisplay(display - 1)}>Go back</a>
-      {players.map((player, i) =>
-        <div key={i}>
-          <p>
-            {i + 1}: <input value={players[i]} onChange={event => updatePlayers(event, i)}/>
-          </p>
-        </div>
-      )}
+      <div className="player-names">
+        {players.map((player, i) =>
+          <div key={i}>
+            <p>
+              {i + 1}: <input value={players[i]} onChange={event => updatePlayers(event, i)}/>
+            </p>
+          </div>
+        )}
+      </div>
       <Button
         bsStyle="info"
         bsSize="large"
