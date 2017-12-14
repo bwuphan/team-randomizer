@@ -10,7 +10,11 @@ const PlayerNames = ({ changeDisplay, display, players, updatePlayers, randomize
         {players.map((player, i) =>
           <div key={i}>
             <p>
-              {i + 1}: <input value={players[i]} onChange={event => updatePlayers(event, i)}/>
+              {i + 1}:
+              <input
+                value={players[i]}
+                maxlength="30"
+                onChange={event => updatePlayers(event, i)}/>
             </p>
           </div>
         )}
