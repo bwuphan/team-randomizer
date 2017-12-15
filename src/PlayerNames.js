@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const PlayerNames = ({ changeDisplay, display, players, updatePlayers, randomizeTeams, onBlurName }) => {
+const PlayerNames = ({ changeDisplay, display, players, updatePlayers, randomizeTeams }) => {
   if (display !== 3) return null;
   else return (
     <div>
@@ -14,8 +14,7 @@ const PlayerNames = ({ changeDisplay, display, players, updatePlayers, randomize
               <input
                 value={players[i]}
                 maxLength="30"
-                onChange={event => updatePlayers(event, i)}
-                onBlur={onBlurName}/>
+                onChange={event => updatePlayers(event, i)} />
             </p>
           </div>
         )}
