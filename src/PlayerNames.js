@@ -10,7 +10,7 @@ const PlayerNames = ({ changeDisplay, display, players, updatePlayers, randomize
         {players.map((player, i) =>
           <div key={i}>
             {errors[i] === true &&
-              <span class="color-red">Duplicate names are not allowed</span>
+              <span className="color-red">Duplicate names are not allowed</span>
             }
             <p>
               {i + 1}:
