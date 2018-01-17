@@ -137,7 +137,8 @@ class App extends Component {
           players={this.state.players}
           updatePlayers={this.updatePlayers}
           randomizeTeams={this.randomizeTeams}
-          errors={this.state.errors}/>
+          errors={this.state.errors}
+          checkForDups={this.checkForDups}/>
         <TeamsView
           changeDisplay={this.changeDisplay}
           display={this.state.display}
