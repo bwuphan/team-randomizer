@@ -54,7 +54,7 @@ class App extends Component {
     const playersObj = {};
     const errors = {};
     for (let i = 0; i < this.state.players.length; i++) {
-      if (this.state.players[i] in playersObj) {
+      if (this.state.players[i] in playersObj && this.state.players[i] !== '') {
         playersObj[this.state.players[i]].push(i);
       } else {
         playersObj[this.state.players[i]] = [i];
@@ -89,11 +89,11 @@ class App extends Component {
     let players = [...this.state.players];
     players[i] = e.target.value;
     this.setState({ players });
+    this.checkForDups();
   }
 
   randomizeTeams = () => {
     this.checkForDups();
-    console.log(this.state.errors);
     if (Object.keys(this.state.errors).length === 0) {
       let teamsMap = {};
       let teamsLeft = this.state.numTeams;
@@ -150,7 +150,8 @@ class App extends Component {
           onBlurName={this.onBlurName}
           players={this.state.players}
           updatePlayers={this.updatePlayers}
-          randomizeTeams={this.randomizeTeams} />
+          randomizeTeams={this.randomizeTeams}
+          errors={this.state.errors}/>
         <TeamsView
           changeDisplay={this.changeDisplay}
           display={this.state.display}

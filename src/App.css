@@ -2,6 +2,10 @@ body, html {
   height: 100%;
 }
 
+.color-red {
+  color: red;
+}
+
 .go-back {
   cursor: pointer;
   position: absolute;
