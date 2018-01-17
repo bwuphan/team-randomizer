@@ -15,6 +15,7 @@ const PlayerNames = ({ changeDisplay, display, players, updatePlayers, randomize
             <p>
               {i + 1}:
               <input
+                className={errors[i] === true ? 'border-red' : ''}
                 value={players[i]}
                 maxLength="30"
                 onBlur={checkForDups}
