@@ -68,6 +68,8 @@ class App extends Component {
         });
       }
     }
+    console.log(playersObj)
+    console.log(errors);
     this.setState({ errors });
     // console.log(playersObj)
     // console.log(errPlayers)
@@ -91,7 +93,8 @@ class App extends Component {
 
   randomizeTeams = () => {
     this.checkForDups();
-    if (this.state.errors.keys().length) {
+    console.log(this.state.errors);
+    if (Object.keys(this.state.errors).length === 0) {
       let teamsMap = {};
       let teamsLeft = this.state.numTeams;
       const teamSize = this.state.players.length / this.state.numTeams;
