@@ -68,21 +68,7 @@ class App extends Component {
         });
       }
     }
-    console.log(playersObj)
-    console.log(errors);
     this.setState({ errors });
-    // console.log(playersObj)
-    // console.log(errPlayers)
-    // for (let i = 0; i < errPlayers.length; i++) {
-    //   const player = errPlayers[i];
-    //   for (let j = 0; j < playersObj[player].length; j++) {
-    //     console.log('here', playersObj[player][j])
-    //     errors[playersObj[player][j]] = true;
-    //     this.setState({errors})
-    //   }
-    // }
-    // console.log(this.state.errors);
-    // this.setState({ errors });
   }
 
   updatePlayers = (e, i) => {
