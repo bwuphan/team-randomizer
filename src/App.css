@@ -10,6 +10,10 @@ body, html {
   margin: auto;
 }
 
+.text-align_right {
+  text-align: right;
+}
+
 .color-red {
   color: red;
 }
