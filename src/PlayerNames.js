@@ -14,7 +14,7 @@ const PlayerNames = ({ changeDisplay, display, players, updatePlayers, randomize
           <tbody>
             {players.map((player, i) =>
               <tr className="height-5rem" key={i}>
-                <th>
+                <th className="text-align_right">
                   {i + 1}:
                 </th>
                 <th>
