@@ -8,12 +8,12 @@ const PlayerNames = ({ changeDisplay, display, players, updatePlayers, randomize
       <a className="go-back" onClick={() => changeDisplay(display - 1)}>Go back</a>
       <div className="player-names">
       {Object.keys(errors).length !== 0 &&
-        <div className="color-red margin-auto">Duplicate player names are not allowed</div>
+        <div className="color-red margin_auto">Duplicate player names are not allowed</div>
       }
-        <table className="margin-auto">
+        <table className="margin_auto">
           <tbody>
             {players.map((player, i) =>
-              <tr className="height-5rem" key={i}>
+              <tr className="height_5rem" key={i}>
                 <th className="text-align_right">
                   {i + 1}:
                 </th>
