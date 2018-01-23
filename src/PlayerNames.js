@@ -10,19 +10,25 @@ const PlayerNames = ({ changeDisplay, display, players, updatePlayers, randomize
       {Object.keys(errors).length !== 0 &&
         <div className="color-red">Duplicate player names are not allowed</div>
       }
-        {players.map((player, i) =>
-          <div key={i}>
-            <p>
-              {i + 1}:
+        <table>
+          <tbody>
+            {players.map((player, i) =>
+            <tr key={i}>
+              <th>
+                {i + 1}:
+              </th>
+              <th>
               <input
                 className={errors[i] === true ? 'border-red' : ''}
                 value={players[i]}
                 maxLength="30"
                 onBlur={checkForDups}
                 onChange={event => updatePlayers(event, i)} />
-            </p>
-          </div>
+              </th>
+            </tr>
         )}
+        </tbody>
+        </table>
       </div>
       <Button
         disabled={Object.keys(errors).length !== 0}
